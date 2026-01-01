@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAWANFLIX | Advanced Movie Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1 class="logo">PAWAN<span>FLIX</span></h1>
+                <button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button>
+            </div>
+            <p>Major Project: Movie Search & Recommendation Engine</p>
+        </header>
+
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="movie-input" placeholder="Search movies or series..." autocomplete="off">
+                <button id="voice-btn" title="Voice Search"><i class="fas fa-microphone"></i></button>
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <select id="sort-filter">
+                <option value="default">Sort By</option>
+                <option value="year">Newest Year</option>
+                <option value="rating">IMDb Rating</option>
+            </select>
+        </div>
+
+        <div class="recommendation-tool">
+            <div class="genre-chips">
+                <span class="chip top-rated" onclick="fetchTopRated('movie')"><i class="fas fa-crown"></i> Best Movies</span>
+                <span class="chip top-rated" onclick="fetchTopRated('series')"><i class="fas fa-tv"></i> Best Series</span>
+                <span class="chip" onclick="recommendByGenre('Action')">Action</span>
+                <span class="chip" onclick="recommendByGenre('Sci-Fi')">Sci-Fi</span>
+                <span class="chip" onclick="recommendByGenre('Comedy')">Comedy</span>
+            </div>
+        </div>
+
+        <div id="movie-grid" class="movie-grid"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
